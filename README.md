@@ -1,5 +1,5 @@
 # junit-datas
-JUnit rule that allows you to inject datas from resources files.
+JUnit-Datas is a JUnit rule that allows you to inject datas from resources files.
 
 
 # Usage
@@ -18,7 +18,7 @@ public class ExampleTest {
   @Datas(value = "datasB.json", count = 50, once = true, shuffle = true)
   public Integer datasIntegerInjectedOnce;
 
-  // Java POJO and all others objects are compatible. Primitive are not supported yet.
+  // Java POJO and all others objects are compatibles. Primitive are not supported yet.
   @Datas("datasC.json")
   public Model[] datasModelArrayTxt;
 
