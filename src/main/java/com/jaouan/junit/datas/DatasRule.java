@@ -183,7 +183,7 @@ public class DatasRule extends ExternalResource {
       final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, Charset.defaultCharset()));
 
       // - If file is a JSon file, read it content as JSon.
-      if (filePath.endsWith(FILEEXTENSION_JSON)) {
+      if (filePath.toLowerCase().endsWith(FILEEXTENSION_JSON)) {
         try {
           object = gson.fromJson(bufferedReader, classOfE);
         } catch (final Throwable cause) {
