@@ -16,15 +16,19 @@ public class ExampleTest {
 
   // Limit array length, shuffle values and inject field once time instead of for each test.
   @Datas(value = "datasB.json", count = 50, once = true, shuffle = true)
-  public Integer datasIntegerInjectedOnce;
+  public Integer[] datasIntegerArrayB;
+
+  // Non-array field will be injected with first array value (or random if shuffled).
+  @Datas("datasB.json")
+  public Integer datasInteger;
 
   // Java POJO and all others objects are compatibles. Primitive are not supported yet.
   @Datas("datasC.json")
-  public Model[] datasModelArrayTxt;
+  public Model[] datasModelArray;
 
   // Load non full JSon file. One JSon object by line.
   @Datas("datasD.txt")
-  public Model[] datasBig;
+  public Model[] datasModelArrayB;
 
 }
 ```
@@ -34,7 +38,7 @@ public class ExampleTest {
 Full JSon file's extension must be ".json".
 Content must be a JSon array.
 
-Here somes examples :
+Here some examples :
 
 Integer array.
 ```
@@ -58,7 +62,7 @@ Bean array.
 Non full JSon file's extension must be anything else.
 Each line is an array value and must be JSon formatted.
 
-Here somes examples :
+Here some examples :
 
 Integer array.
 ```
